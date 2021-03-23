@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Zoom Class Link</title>
+        <meta charset="utf-8">
+        <script>var week = [["월요일", "화요일","수요일", "목요일","금요일","토요일","일요일"],
+            ["국어","영어","국어","가정","수학","없음","없음"],
+            ["수학","과학","과학","중국어","국어","없음","없음"],
+            ["진로","체육","수학","역사","영어","없음","없음"],
+            ["중국어","도덕","역사","과학","도덕","없음","없음"],
+            ["역사","중국어","영어","국어","과학","없음","없음"],
+            ["기술","스활","가정","체육","체육","없음","없음"],
+            ["없음","수학","없음","없음","없음","없음","없음"]]
+ 
+ function change(){
+   var today= new Date();
+   var date = today.getDay();
+   var currentTime =
+     today.getDate()+"일"+
+     today.getHours()+"시"+
+     today.getMinutes()+"분"+
+     today.getSeconds()+"초";
+   document.getElementById('clock').innerHTML=week[0][date-1]+" "+currentTime;
+   var hour = today.getHours();
+   var minute = today.getMinutes();
+     schedule(hour,minute,date)
+     setInterval("change()",1000); }
+ function schedule(hours,minute,date){
+   switch(hours){
+     case 8:
+       if (minute<50){
+         document.getElementById('schedule').innerHTML="없음(휴식)";
+         break;
+       }
+       else{
+         document.getElementById('schedule').innerHTML="조회";
+         break;
+       }
+     case 9:
+       if (minute<=10){
+         document.getElementById('schedule').innerHTML="조회";
+         break;
+       }
+       else if (minute<=15 && 10<minute){
+         document.getElementById('schedule').innerHTML="휴식시간";
+         break;
+       }
+       else{
+         document.getElementById('schedule').innerHTML=week[1][date-1]+"시간";
+         break;
+       }
+     case 10:
+       if (minute<=10){
+         document.getElementById('schedule').innerHTML="휴식시간";
+         break;
+       }
+       else if(minute<=55){
+         document.getElementById('schedule').innerHTML=week[2][date-1];
+         break;
+       }
+       else{
+         document.getElementById('schedule').innerHTML="휴식시간";
+         break;
+       }
+     case 11:
+       if(minute<=5){
+         document.getElementById('schedule').innerHTML="휴식시간";
+         break;
+       }
+       else if(minute<=50){
+         document.getElementById('schedule').innerHTML=week[3][date-1];
+         break;
+       }
+       else{
+         document.getElementById('schedule').innerHTML="휴식시간";
+         break;
+       }
+       case 12:
+         if(minute<=45){
+           document.getElementById('schedule').innerHTML=week[4][date-1];
+           break;
+         }
+         else{
+           document.getElementById('schedule').innerHTML="점심시간";
+           break;
+         }
+       case 13:
+         if(minute<=45){
+           document.getElementById('schedule').innerHTML="점심시간";
+           break;
+         }
+         else {
+           document.getElementById('schedule').innerHTML=week[5][date-1];
+           break;
+         }
+       case 14:
+         if(minute<=30){
+           document.getElementById('schedule').innerHTML=week[5][date-1];
+           break;
+         }
+         else if(minute<=40){
+           document.getElementById('schedule').innerHTML="쉬는 시간";
+           break;
+         }
+         else {
+           document.getElementById('schedule').innerHTML=week[6][date-1];
+           break;
+         }
+       case 15:
+         if (minute<=25){
+           document.getElementById('schedule').innerHTML=week[6][date-1];
+           break;
+         }
+         else{
+           document.getElementById('schedule').innerHTML="쉬는시간";
+           break;
+         }
+       case 16:
+         if(minute<=30){
+           document.getElementById('schedule').innerHTML=week[7][date-1]+"시간";
+           break;
+         }
+         else {
+           document.getElementById('schedule').innerHTML="없음";
+           break;
+         }
+       default:
+         document.getElementById('schedule').innerHTML="없음";
+         break;
+        }
+ }
+     </script>
+        <style>
+            .h2{
+                text-align: center;
+
+            }
+            button{
+                color:black;
+                background-color:beige;
+                width:75px;
+                height:45px;
+                font-size: 18px;
+                
+            }
+            #home{
+                position:absolute;
+                left: 50%;
+                margin-left: -40px;
+            }
+            .button{
+                color:black;
+                background-color:beige;
+                width:50px;
+                font-size: 25px;
+            }
+            #one{
+                position: absolute;
+                left: 50%;
+                display: block;
+                margin-left: -150px;
+            }
+            #two{
+                position: absolute;
+                left: 50%;
+                margin-left:-275px;
+            }
+        </style>
+    </head>
+    <body onload="change()">
+        <h2 class="h2">현재시간: <span id="clock"></span></h2>
+            
+            <h3 class="h2">조회</h3>
+            <div><button id="home" onclick="window.open('https://zoom.us/j/8851232719?pwd=MXJQL0g4enFRUXJOV1l2TWdmbjRadz09')">조회</button></div>
+            <br><br><h3 class="h2">Major class</h3>
+            <div id="one"><button onclick="window.open('https://zoom.us/j/5493007344?pwd=TEQ2bGVBWmltVStvWE9TdFBGRGR3Zz09')">국어</button>
+            <button onclick="window.open('https://zoom.us/j/8851232719?pwd=MXJQL0g4enFRUXJOV1l2TWdmbjRadz09')">수학</button>        
+            <button onclick="window.open('https://zoom.us/j/9887593795?pwd=TGU4OUNEdkJhNEFESUFSWTlPNk9MQT09')">영어</button>
+            <button onclick="window.open('https://zoom.us/j/2582102822?pwd=bzJqaFpkSmhvV0V4MTVKdFYwSEJtQT09')">과학</button></tr></div>
+            <br><br><h3 class="h2">Minor class</h3>
+                <div id="two">
+                <button onclick="window.open('https://zoom.us/j/6169425798?pwd=U3orNU8rRXhiR0JGMnJOVVdWS2tJZz09')">진로</button>
+                <button onclick="window.open('https://zoom.us/j/7043854715?pwd=TlBSUFU4SDc2R3BMdTVwR0RWbnNOUT09')">중국어</button>
+                <button onclick="window.open('https://zoom.us/j/7327278329?pwd=c2liaGM3YVhBVEJSNFNjUm1FSkNIdz09')">역사</button>
+                <button onclick="window.open('https://zoom.us/j/2195355543?pwd=aW9zNTRHS1pQd0RZeVNIeVpmQjJXQT09')">기술</button>
+                <button onclick="window.open('https://zoom.us/j/5187698370?pwd=RGJaUGFteXNUc0lDNTM5a252YjlhZz09')">도덕</button>
+                <button onclick="window.open('https://zoom.us/j/2998361210?pwd=cGRFUHVrcHNGRjJTNG1xc0pZNWVYUT09')">가정</button>
+                <button onclick="window.open('https://zoom.us/j/5837964776?pwd=WmJnUmREeW8zamFvZkliSCtNYjF6QT09')">스활</button></div>
+                <br><br><h2 class="h2">현재 수업: <span id="schedule"></span></h2>
+    </body>
+</html>

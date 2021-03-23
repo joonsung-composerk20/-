@@ -1,0 +1,70 @@
+body {
+    background-color: #191919;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h1,
+h2 {
+    color: #ffff;
+}
+
+.loginUI {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #191719;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.loginUI [type = "text"],
+.loginUI [type = "password"] {
+    border: 0;
+    color: white;
+    background-color: #191719;
+    border: 2px solid #009432;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.25s;
+}
+
+.loginUI [type = "submit"] {
+    color: #353b48;
+    border: 0;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #191719;
+}
+
+li {
+    list-style-type: none;
+}
+
+.UserImg {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 44.5%;
+    left: 28%;
+}
+
+.LockImg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 67%;
+    left: 29%;
+}
+
+button {
+    display: none;
+}
